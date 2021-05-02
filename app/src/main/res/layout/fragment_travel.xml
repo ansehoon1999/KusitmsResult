@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Second.Travel_Fragment"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="글 작성 버튼" />
+
+    <Button
+        android:id="@+id/travel_writeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="글 작성"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="여행 시작"/>
+
+    <Button
+        android:id="@+id/travel_startButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="여행 시작"/>
+
+</LinearLayout>
