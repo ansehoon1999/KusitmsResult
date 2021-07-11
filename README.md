@@ -35,5 +35,14 @@
 |------|---|---|
 |<img src="https://user-images.githubusercontent.com/63048392/125202187-74b26500-e2ad-11eb-9688-1a39a3d28389.png" width="300" height ="400">|<img src="https://user-images.githubusercontent.com/63048392/125202188-767c2880-e2ad-11eb-9529-2dd6c16763c1.png" width="300" height ="400">|<img src="https://user-images.githubusercontent.com/63048392/125202191-78de8280-e2ad-11eb-9406-9d7523b9f4f2.png" width="300" height ="400">|
 
+### Member
 
-
+|Name|Part|Work|
+|------|---|---|
+|안세훈|PM, 개발|Front-End & Back-End & 디자인|
+|남기쁨|개발|크롤링 및 GPS를 이용한 핵심 자동화 시스템 구현|
+|엄세리|개발|Front-end 및 UI 디자인|
+|금나연|개발|추천 시스템 & GPS 알고리즘 및 Diagram 작성|
+|김형철|기획|사업계획서 작성 및 전체 정리 |
+|안여진|기획|사업계획서 작성 및 로고 제작|
+|최수현|기획, 디자인|사업계획서 작성 및 아이템포스터 제작 & 앱 디자인|
