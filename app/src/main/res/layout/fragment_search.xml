@@ -1,14 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".Second.Search_Fragment">
+    android:layout_height="match_parent">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/aa"
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+
+        <ImageView
+            android:layout_width="90dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="147dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/travelfound" />
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/search_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false">
+
+
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+
+    <EditText
+        android:id="@+id/txtSearch"
+        android:singleLine="true"
+        android:layout_width="400dp"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:layout_below="@+id/aa"
+        android:hint="장소"
+        android:textSize="16dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/edit"
+        android:drawablePadding="4dp"
+        android:elevation="8dp"
+        android:fontFamily="@font/nexonlight"
+        android:drawableStart="@drawable/ic_baseline_search_24"
+
+        />
+
+
+
+
+    <androidx.recyclerview.widget.RecyclerView
+
+        android:id="@+id/listData2"
+        android:layout_below="@+id/txtSearch"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="search" />
 
-</FrameLayout>
+        />
+</RelativeLayout>

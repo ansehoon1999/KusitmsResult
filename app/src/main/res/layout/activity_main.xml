@@ -1,30 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Second.MainActivity">
+    android:background="@null"
+    android:orientation="vertical"
+    >
 
-    <FrameLayout
-        android:id="@+id/frameLayout"
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/vp_horizontal_ntb"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/navigationView"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_weight="1" />
 
-
-    </FrameLayout>
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/navigationView"
+    <View
+        android:id="@+id/bottom_div"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/main_navigation_menu"/>
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_height="1dp"
+        android:layout_above="@id/ntb_horizontal"/>
+
+
+    <devlight.io.library.ntb.NavigationTabBar
+        android:id="@+id/ntb_horizontal"
+
+        android:layout_width="375dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="7dp"
+        android:layout_marginBottom="17dp"
+        android:elevation="10dp"
+        app:ntb_badge_gravity="top"
+        app:ntb_badge_position="right"
+        app:ntb_typeface="fonts/GodoM.ttf"
+        app:ntb_bg_color="@android:color/white"
+        app:ntb_badged="true"
+        app:ntb_scaled="true"
+        app:ntb_tinted="true"
+        app:ntb_title_mode="all"
+        app:ntb_titled="true"
+        app:ntb_swiped="true"
+        android:background="@drawable/nav_shape"
+
+        >
+
+    </devlight.io.library.ntb.NavigationTabBar>
+</LinearLayout>

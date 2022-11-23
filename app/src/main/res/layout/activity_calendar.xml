@@ -7,17 +7,50 @@
     tools:context=".Travel_Fragment.CalendarActivity"
     android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+
+        <View
+            android:layout_width="75dp"
+            android:layout_height="26dp"
+            android:layout_marginLeft="165dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/review"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <com.prolificinteractive.materialcalendarview.MaterialCalendarView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/Calendar_calendarView"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="캘린더 엑티비티"
-        />
+        app:mcv_showOtherDates="all"
+        app:mcv_selectionColor="#00F" />
+
 
     <Button
         android:id="@+id/Calendar_nextButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="평가 및 후기 작성 페이지 이동 버튼"/>
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:text="평가 및 후기 작성"
+        android:textColor="@color/black"
+        android:layout_gravity="center"
+        android:textSize="16dp"
+        android:fontFamily="@font/nexonbold"
+        android:shape="rectangle"/>
+
+    <Button
+        android:id="@+id/Review_draftButton"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:text="임시저장 항목 바로가기"
+        android:textColor="@color/black"
+        android:layout_gravity="center"
+        android:textSize="16dp"
+        android:fontFamily="@font/nexonbold"
+        android:shape="rectangle"/>
 
 
 </LinearLayout>

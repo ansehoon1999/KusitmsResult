@@ -1,19 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center_horizontal|center_vertical"
-    >
+    android:gravity="center_horizontal|center_vertical">
 
-    <ImageView
-        android:layout_width="176dp"
-        android:layout_height="186dp"
-        android:gravity="center"
-        android:src="@drawable/tmp" />
 
-   <TextView
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:text="Splash Page"/>
-</LinearLayout>
+    <View
+        android:id="@+id/background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+
+        android:background="@drawable/background">
+
+
+    </View>
+
+    <View
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="42dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="85dp"
+        android:background="@drawable/origami"
+        />
+
+    <TextView
+        android:id="@+id/some_id"
+        android:layout_width="152dp"
+        android:layout_height="76dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="42dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="130dp"
+        android:text="여행에 \n날개를 달다"
+        android:textAppearance="@style/some_id"
+        android:gravity="top"
+        android:fontFamily="@font/cafe"
+        />
+
+    <TextView
+        android:id="@+id/travelog"
+        android:layout_width="150dp"
+        android:layout_height="18dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="44dp"
+        android:layout_marginTop="210dp"
+        android:gravity="top"
+        android:text="트래블로그 TraveLog"
+        android:textAppearance="@style/travelog"
+        android:fontFamily="@font/nexonbold"/>
+
+</RelativeLayout>

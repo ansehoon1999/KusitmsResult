@@ -1,48 +1,45 @@
-# ✈ Kusitms 학술제 1Of1조(우수상) - TravelLog
+# Travelog✈️
 
-<img src="https://img.shields.io/badge/platform-android-brightgreen">
+### KUSITMS 23기(2021.3~2021.6) 학술제 우수상작 🥉
+
+#### 여행에 날개를 달다 
+
+<img src="https://user-images.githubusercontent.com/68985625/130225398-33339094-791b-45ea-89ad-460e73594d8d.jpg" width=80%>
+
+## About Travelog
+* **Simplify** keeping record of and reviewing trips
+1. Real-time automatic recognition of travel route through GPS.
+2. Automatic recognition of each location the user is visiting.
+3. User completes trip review by selecting among TRIP keys and adding comments to each photo.
+</br>
+
+* **Customized** travelling information based on user's personal needs
+1. Easily readable details of the whole trip.
+2. Using keywords to provide information that meets personal preferences.</br>
+  ***T**ransportation  **R**evisit  **I**dea  **P**rice*
+</br>
+
+## Technology Stack
+* Android Studio 4.1.1
+* buildToolsVersion 30.0.1
+* compileSDKversion 30
+
+* Firebase Realtime Database/Storage version 19.3.0
+
+* Google Login, Map API
+* Facebook Login API
+* Recommendation System: Contents-based Collaborative filtering
+</br>
+
+## Use-Case Map
+<img src="https://user-images.githubusercontent.com/66097819/148505423-65d460a9-df91-4166-bcf5-98985a74848a.png">
 
 
-> 23기 큐시즘 학술제 1Of1조 우수상 수상작
+## Demo
+|튜토리얼|장소 스크랩|여행 기록|
+|---------|--------|------|
+|<img src="https://user-images.githubusercontent.com/66097819/148501106-ec0168e2-8f36-43ac-8020-69573094ae9c.gif" width="250">|<img src="https://user-images.githubusercontent.com/66097819/148501139-cb0c7100-6233-45ce-a978-c614ff55850b.gif" width="250">|<img src="https://user-images.githubusercontent.com/66097819/148503391-3aead377-25f2-4dbe-8903-d8e73a66e005.gif" width="250">|
 
-> GPS와 크롤링을 통한 여행 후기 자동화 어플
-
-<img src = "https://user-images.githubusercontent.com/63048392/125201510-775f8b00-e2aa-11eb-9518-3455a5db8082.png" height = 300>
-
-### Technologoy Stack
-- AndroidStudio 4.1.1
-- buildToolsVersion = 30.0.1
-- compileSdkversion = 30
-- Firebase Realtime Database/Storage version = 19.3.0
-- Google Login, Map api
-- Facebook Login api
-- Recommendation System : Contents-based Collaborative filtering
-
-
-### Use Case Diagram & Flow Chart
-
-![image](https://user-images.githubusercontent.com/63048392/125201656-0b315700-e2ab-11eb-9df6-43f70f03a694.png)
-
-![image](https://user-images.githubusercontent.com/63048392/125201667-18e6dc80-e2ab-11eb-9760-0aa74686b81c.png)
-
-### App Demo
-
-|튜토리얼|스크랩 모음|여행 기록|
-|------|---|---|
-|<img src="https://user-images.githubusercontent.com/63048392/125201852-e25d9180-e2ab-11eb-96f2-8d273624696c.gif" width="300" height ="400">|<img src="https://user-images.githubusercontent.com/63048392/125201881-028d5080-e2ac-11eb-9cee-379fba8f4881.gif" width="300" height ="400">|<img src="https://user-images.githubusercontent.com/63048392/125201965-657ee780-e2ac-11eb-8658-c5a971eecbf3.gif" width="300" height ="400">|
-
-|후기 작성1|후기 작성2|후기 작성3|
-|------|---|---|
-|<img src="https://user-images.githubusercontent.com/63048392/125202187-74b26500-e2ad-11eb-9688-1a39a3d28389.png" width="300" height ="400">|<img src="https://user-images.githubusercontent.com/63048392/125202188-767c2880-e2ad-11eb-9529-2dd6c16763c1.png" width="300" height ="400">|<img src="https://user-images.githubusercontent.com/63048392/125202191-78de8280-e2ad-11eb-9406-9d7523b9f4f2.png" width="300" height ="400">|
-
-### Member
-
-|Name|Part|Work|
-|------|---|---|
-|안세훈|PM, 개발|Front-End & Back-End & 디자인|
-|남기쁨|개발|크롤링 및 GPS를 이용한 핵심 자동화 시스템 구현|
-|엄세리|개발|Front-end 및 UI 디자인|
-|금나연|개발|추천 시스템 & GPS 알고리즘 및 Diagram 작성|
-|김형철|기획|사업계획서 작성 및 전체 정리 |
-|안여진|기획|사업계획서 작성 및 로고 제작 |
-|최수현|기획, 디자인|사업계획서 작성 및 아이템포스터 제작 & 앱 디자인|
+|여행 종료|후기작성1|후기작성2|
+|------|------|------|
+|<img src="https://user-images.githubusercontent.com/66097819/148501363-3bfbf526-3732-42dd-b48e-b08919035251.jpg" width="250">|<img src="https://user-images.githubusercontent.com/66097819/148501378-cb67e4f2-79f6-4cb4-b206-a74aef8c3f6a.jpg" width="250">|<img src="https://user-images.githubusercontent.com/66097819/148501369-5d17a863-1a8d-41dc-884a-cb35151080bf.jpg" width="250">|

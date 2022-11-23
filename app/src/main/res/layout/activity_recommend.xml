@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/transparent"
+    android:gravity="center_vertical"
+
+    tools:context=".Travel_Fragment.StoreListActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="330dp"
+        android:background="@android:color/transparent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="@android:color/transparent">
+
+
+            <com.example.kusitmsresult.Travel_Fragment.CustomTextView
+                android:id="@+id/CustomTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:elevation="50dp"
+                android:fontFamily="@font/cafe"
+                android:singleLine="true"
+                android:text="다음 추천 장소"
+                android:textColor="@color/black"
+                android:textSize="25dp"
+                app:textStroke="true"
+                app:textStrokeColor="#B3FFFFFF"
+                app:textStrokeWidth="10.0"></com.example.kusitmsresult.Travel_Fragment.CustomTextView>
+
+            <ListView
+                android:id="@+id/recommendActivity_listview"
+                android:layout_width="200dp"
+                android:layout_height="230dp"
+                android:listSelector="#D9BBE3"
+                android:fontFamily="@font/cafe"
+                android:dividerHeight="5dp"
+                android:divider="@android:color/transparent"
+                android:elevation="30dp"
+                android:background="@drawable/storelist_background"
+                >
+            </ListView>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:elevation="20dp"
+                >
+
+                <Button
+                    android:text="확인"
+                    android:id="@+id/recommend_button_ok"
+                    android:background="#D9BBE3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+
+                    android:fontFamily="@font/cafe"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginRight="3dp"/>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+</LinearLayout>

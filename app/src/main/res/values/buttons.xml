@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <array name="icons">
+
+
+        <item>@drawable/tmp</item>
+        <item>@drawable/tmp</item>
+        <item>@drawable/tmp</item>
+        <item>@drawable/tmp</item>
+
+
+
+
+    </array>
+
+    <array name="colors">
+
+        <item>@android:color/holo_blue_bright</item>
+        <item>@android:color/holo_green_dark</item>
+        <item>@android:color/holo_red_light</item>
+        <item>@android:color/holo_orange_light  </item>
+
+
+    </array>
+
+
+
+</resources>

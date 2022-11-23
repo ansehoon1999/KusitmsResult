@@ -1,37 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center_horizontal"
-    >
-
-
-    <ImageView
-        android:layout_width="240dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="150dp"
-        android:src="@drawable/tmp"/>
-
-    <Button
-        android:id="@+id/Login_tmpButton"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:layout_marginBottom="140dp"
-        android:paddingHorizontal="20dp"
-        android:text="구글 로그인 대신 임시 버튼 > "
-        android:textSize="13dp" />
+    tools:layout_editor_absoluteY="81dp"
+    android:orientation="vertical">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="로그인 페이지"
-        android:textStyle="bold"
-        android:textAlignment="center"
-        android:layout_marginVertical="20dp"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="55dp"
+        android:layout_marginLeft="55dp"
+        android:layout_marginTop="89dp"
+        android:layout_marginEnd="55dp"
+        android:gravity="center_horizontal|top"
+        android:text="트래블로그에 오신 것을 \n환영합니다"
+        android:textAppearance="@style/welcome"
+        android:fontFamily="@font/cafe"/>
+
+    <View
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="65dp"
+        android:background="@drawable/origami"
         />
 
+    <View
+        android:layout_width="335dp"
+        android:layout_height="240dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginLeft="38dp"
+        android:layout_marginTop="251dp"
+        android:layout_marginEnd="38dp"
+        android:background="@drawable/talk" />
 
-</LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="195dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="-5dp"
+        android:layout_marginTop="490dp"
+        android:layout_marginBottom="-1dp"
+        android:background="@drawable/divider" />
+
+    <com.facebook.login.widget.LoginButton
+        android:id="@+id/facebook_login_button"
+        android:text="구글 로그인으로 트래블 로그 실행하기"
+        android:layout_width="400dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="600dp"
+        android:layout_centerHorizontal="true"/>
+
+    <com.shobhitpuri.custombuttons.GoogleSignInButton
+        android:id="@+id/login_button"
+        android:layout_width="400dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="550dp"
+        android:text="구글 로그인으로 트래블 로그실행하기"
+
+        android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>

@@ -1,37 +1,156 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center_horizontal"
-    >
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:clipChildren="true"
+    android:clipToPadding="true">
 
 
-    <ImageView
-        android:layout_width="240dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="150dp"
-        android:src="@drawable/tmp"/>
 
-    <Button
-        android:id="@+id/Tutorial_tmp_Button"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:layout_marginBottom="140dp"
-        android:paddingHorizontal="20dp"
-        android:text="로그인 페이지로 넘어가는 임시 버튼"
-        android:textSize="13dp" />
 
-    <TextView
+    <com.dev.sacot41.scviewpager.SCViewPager
+        android:id="@+id/viewpager_main_activity"
+        android:layout_width="match_parent"
+        android:layout_height="675dp">
+    </com.dev.sacot41.scviewpager.SCViewPager>
+
+    <com.dev.sacot41.scviewpager.DotsView
+        android:orientation="horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="튜토리얼 페이지"
-        android:textStyle="bold"
-        android:textAlignment="center"
-        android:layout_marginVertical="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/dotsview_main"
         />
 
+    <ImageView
+        android:id="@+id/imageview_main_activity_name_tag"
+        android:layout_width="500dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="70dp"
+        android:paddingLeft="40dp"
+        android:paddingRight="50dp"
+        android:rotation="-10"
+        android:src="@drawable/travelog_tutorial1" />
 
-</LinearLayout>
+    <ImageView
+        android:id="@+id/imageview_main_activity_currently_work"
+        android:layout_width="162dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="85dp"
+        android:layout_marginTop="340dp"
+        android:src="@drawable/special_write" />
+
+    <ImageView
+        android:id="@+id/imageview_main_activity_at_skex"
+        android:layout_width="103dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="210dp"
+        android:layout_marginTop="375dp"
+        android:src="@drawable/special_share" />
+
+    <ImageView
+        android:id="@+id/imageview_main_activity_commonly"
+        android:layout_width="361dp"
+        android:layout_height="227dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="40dp"
+        android:src="@drawable/lovetravel_tutorial2"/>
+
+    <ImageView
+        android:id="@+id/imageview_main_activity_django_python"
+        android:layout_width="wrap_content"
+        android:layout_height="450dp"
+        android:layout_marginTop="250dp"
+        android:src="@drawable/together_pic" />
+
+    <ImageView
+        android:id="@+id/imageview_main_activity_mobile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="180dp"
+        android:layout_centerHorizontal="true"/>
+
+    <ImageView
+        android:id="@+id/imageview_main_activity_but"
+        android:layout_width="404dp"
+        android:layout_height="179dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/tripbadge_word" />
+
+    <ImageView
+        android:id="@+id/imageview_main_activity_diploma"
+        android:layout_width="360dp"
+        android:layout_height="500dp"
+        android:layout_marginTop="140dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/trip_badge2"/>
+
+    <ImageView
+        android:id="@+id/imageview_main_activity_why"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="70dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/personal"/>
+
+    <ImageView
+        android:id="@+id/imageview_main_future"
+        android:layout_width="305dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="50dp"
+        android:src="@drawable/revieweasy_tutorial4" />
+
+    <ImageView
+        android:id="@+id/imageview_main_arduino"
+        android:layout_width="201dp"
+        android:layout_height="203dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="200dp"
+        android:src="@drawable/post1_tutorial4" />
+
+    <ImageView
+        android:id="@+id/imageview_main_raspberry_pi"
+        android:layout_width="182dp"
+        android:layout_height="182dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="260dp"
+        android:layout_marginRight="20dp"
+        android:src="@drawable/post2_tutorial4" />
+
+    <ImageView
+        android:id="@+id/imageview_main_connected_device"
+        android:layout_width="306dp"
+        android:layout_height="227dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="0dp"
+        android:layout_marginBottom="120dp"
+        android:src="@drawable/post3_tutorial4" />
+
+    <ImageView
+        android:id="@+id/imageview_main_check_out"
+        android:layout_width="wrap_content"
+        android:layout_height="620dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/airplane"/>
+
+
+    <Button
+        android:id="@+id/next"
+        android:layout_width="380dp"
+        android:layout_height="60dp"
+        android:fontFamily="@font/cafe"
+        android:text="트래블로그 시작하기"
+        android:textSize="20dp"
+        android:layout_marginTop="520dp"
+        android:layout_centerHorizontal="true"/>
+
+
+
+
+</RelativeLayout>

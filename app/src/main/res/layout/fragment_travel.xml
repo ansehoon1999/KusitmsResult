@@ -1,33 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Second.Travel_Fragment"
-    android:orientation="vertical">
+    tools:context=".Travel_Fragment.StartTravelActivity"
+    android:orientation="vertical"
+    android:clipToPadding="false">
 
 
-    <TextView
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="글 작성 버튼" />
+
+        android:layout_height="45dp">
+
+        <View
+            android:layout_width="85dp"
+            android:layout_height="35dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="148dp"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/traveling" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <Button
+        android:id="@+id/startTravel_endButton"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="560dp"
+        android:fontFamily="@font/nexonbold"
+        android:gravity="center"
+        android:text="여행 시작하기"
+        android:textSize="18dp"
+        android:translationZ="10dp"
+        android:textColor="@color/black"
+        android:background="@drawable/shadow_button" />
 
     <Button
         android:id="@+id/travel_writeButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="글 작성"
-        />
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="620dp"
+        android:fontFamily="@font/nexonbold"
+        android:gravity="center"
+        android:text="후기 작성 바로가기"
+        android:textSize="18dp"
+        android:translationZ="10dp"
+        android:textColor="@color/black"
+        android:elevation="30dp"
+        android:background="@drawable/shadow_button"/>
+
+
+    <View
+        android:layout_width="240dp"
+        android:layout_height="240dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginLeft="110dp"
+        android:layout_marginTop="250dp"
+        android:layout_marginEnd="89dp"
+        android:background="@drawable/write"/>
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="267dp"
         android:layout_height="wrap_content"
-        android:text="여행 시작"/>
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="62dp"
+        android:layout_marginTop="110dp"
+        android:gravity="center_horizontal|top"
+        android:text="나만의 여행 경로를 \n트래블로그에 남겨보세요."
+        android:shadowDx="7.0"
+        android:shadowDy="7.0"
+        android:textAppearance="@style/travel_route"
+        android:fontFamily="@font/cafe"/>
 
-    <Button
-        android:id="@+id/travel_startButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="여행 시작"/>
+    <ImageView
+        android:id="@+id/flyingAirplane"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginLeft="50dp"
+        android:background="@drawable/plane_ani"
+        />
 
-</LinearLayout>
+
+
+</RelativeLayout>

@@ -7,4 +7,12 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name = "mainColor">#DBCEDF</color>
+    <color name="light_pink">#FFFDFE</color>
+    <color name="item_title">#00FFFDFE</color>
+    <color name="brown">#6A515E</color>
+    <color name="transparent">#1A000000</color>
+    <color name="colorShimmer">#E4E2E2</color>
+
+
 </resources>

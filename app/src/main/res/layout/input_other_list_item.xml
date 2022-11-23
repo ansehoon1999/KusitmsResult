@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="200dp"
+    android:layout_height="300dp"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/InputOtherListItem_ImageView"
+        android:layout_width="match_parent"
+        android:src="@drawable/tmp"
+        android:layout_height="150dp" />
+
+    <TextView
+        android:id="@+id/InputOtherListItem_place_textView"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:text="장소"
+        android:textSize="20dp"/>
+
+    <TextView
+        android:id="@+id/InputOtherListItem_time_textView"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:text="시간"
+        android:textSize="20dp"
+        />
+
+    <TextView
+        android:id="@+id/InputOtherListItem_rating_textView"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:text="평점"
+        android:textSize="20dp"
+        />
+
+    <TextView
+        android:id="@+id/InputOtherListItem_comment_textView"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:text="코멘트"
+        android:textSize="20dp" />
+
+</LinearLayout>

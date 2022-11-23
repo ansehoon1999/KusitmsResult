@@ -2,25 +2,25 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/navigation_one"
-        android:icon="@drawable/tmp"
+        android:icon="@drawable/home"
         android:title="메인 홈" />
 
     <item
         android:id="@+id/navigation_two"
-        android:icon="@drawable/tmp"
+        android:icon="@drawable/pin"
         android:title="여행" />
 
     <item
         android:id="@+id/navigation_three"
-        android:icon="@drawable/tmp"
+        android:icon="@drawable/search"
         android:title="검색" />
 
     <item
         android:id="@+id/navigation_four"
-        android:icon="@drawable/tmp"
+        android:icon="@drawable/bookmark"
         android:title="스크랩 모음" />
     <item
         android:id="@+id/navigation_five"
-        android:icon="@drawable/tmp"
+        android:icon="@drawable/mypage"
         android:title="마이페이지" />
 </menu>

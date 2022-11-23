@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TutorialActivity.TutorialFragment5">
+
+
+
+        <ImageView
+            android:layout_width="240dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="150dp"
+            android:src="@drawable/tmp" />
+
+        <Button
+            android:id="@+id/Tutorial_tmp_Button"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginBottom="140dp"
+            android:paddingHorizontal="20dp"
+            android:text="로그인 페이지로 넘어가는 임시 버튼"
+            android:textSize="13dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="20dp"
+            android:text="튜토리얼 페이지"
+            android:textAlignment="center"/>
+
+
+
+
+</FrameLayout>

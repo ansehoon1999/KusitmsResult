@@ -1,5 +1,35 @@
 <resources>
-    <string name="app_name">KusitmsResult</string>
+    <string name="app_name">트래블로그</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="facebook_app_id">2392376434229483</string>
+    <string name="fb_login_protocol_scheme">fb2392376434229483</string>
+    <string name="map_key">AIzaSyDUH4RA-fkgGo4YAvC7LXGIlfY3-XEfIyI</string>
+    <string name="title_activity_maps1">Map</string>
+
+
+    <string name="main_nav_first">메인 홈</string>
+    <string name="main_nav_second">검색</string>
+    <string name="main_nav_third">여행</string>
+    <string name="main_nav_forth">스크랩 모음</string>
+    <string name="main_nav_fifth">마이페이지</string>
+
+    <string name="permission_request">Location permission is needed for core functionality</string>
+    <string name="permission_denied"> This setting is needed for the application to work</string>
+    <string name="setting">Give the permission needed!</string>
+    <string name="title_activity_login">Sign in</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="title_activity_profile">Profile</string>
 </resources>

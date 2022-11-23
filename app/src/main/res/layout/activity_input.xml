@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center">
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+
+        <ImageButton
+            android:id="@+id/ImageSwitcher_previousButton"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:textColor="@color/black"
+            android:src="@drawable/ic_baseline_navigate_before_24"
+            android:background="@android:color/transparent" />
+
+
+        <ImageSwitcher
+
+            android:id="@+id/ImageSwitcher_ProfileImage"
+            android:background="@drawable/write"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_margin="30dp"/>
+
+
+        <ImageButton
+            android:id="@+id/ImageSwitcher_nextButton"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_baseline_navigate_next_24" />
+
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/Input_placeEditText"
+        android:layout_width="300dp"
+        android:layout_height="45dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_marginTop="20dp"
+        android:hint="장소"
+        android:textSize="16dp"
+        android:background="@drawable/edit"
+        android:drawableStart="@drawable/ic_baseline_place_24"
+        android:drawablePadding="4dp"
+        android:elevation="8dp"
+        android:fontFamily="@font/nexonlight"/>
+
+    <EditText
+        android:id="@+id/Input_dateEditText"
+        android:layout_width="300dp"
+        android:layout_height="45dp"
+        android:ems="10"
+        android:hint="날짜"
+        android:textSize="16dp"
+        android:layout_marginTop="20dp"
+
+        android:background="@drawable/edit"
+        android:drawableStart="@drawable/ic_baseline_date_range_24"
+        android:drawablePadding="4dp"
+        android:elevation="8dp"
+
+        android:fontFamily="@font/nexonlight"/>
+
+    <EditText
+        android:id="@+id/Input_timeEditText"
+        android:layout_width="300dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="20dp"
+
+        android:ems="10"
+        android:hint="끝난 시간"
+        android:textSize="16dp"
+        android:elevation="8dp"
+
+        android:background="@drawable/edit"
+        android:drawableStart="@drawable/ic_baseline_access_time_24"
+        android:drawablePadding="4dp"
+
+        android:fontFamily="@font/nexonlight"/>
+
+    <EditText
+        android:id="@+id/Input_commentEditText"
+        android:layout_width="300dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="20dp"
+
+        android:ems="10"
+        android:hint="코멘트"
+        android:textSize="16dp"
+        android:elevation="8dp"
+
+        android:background="@drawable/edit"
+        android:drawableStart="@drawable/ic_baseline_comment_24"
+        android:drawablePadding="4dp"
+        android:fontFamily="@font/nexonlight"/>
+
+
+    <com.hsalf.smileyrating.SmileyRating
+        android:id="@+id/smile_rating"
+        android:layout_width="300dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="20dp"
+        />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <com.like.LikeButton
+            android:id="@+id/firstLikeButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginRight="5dp"
+            app:circle_end_color="#A9D18E"
+            app:circle_start_color="@color/colorPrimary"
+            app:dots_primary_color="#A9D18E"
+            app:dots_secondary_color="@color/colorPrimary"
+            app:icon_size="35dp"
+            app:anim_scale_factor="2.5"
+            app:like_drawable="@drawable/t_text"
+            app:unlike_drawable="@drawable/t_gray" />
+
+        <com.like.LikeButton
+            android:id="@+id/secondLikeButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginRight="5dp"
+
+            app:circle_end_color="#FFE699"
+            app:circle_start_color="@color/colorPrimary"
+            app:dots_primary_color="#FFE699"
+            app:dots_secondary_color="@color/colorPrimary"
+            app:icon_size="35dp"
+            app:anim_scale_factor="2.5"
+            app:like_drawable="@drawable/r_text"
+            app:unlike_drawable="@drawable/r_gray"
+          />
+
+        <com.like.LikeButton
+            android:id="@+id/thirdLikeButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginRight="5dp"
+
+            app:circle_end_color="#F4B183"
+            app:circle_start_color="@color/colorPrimary"
+            app:dots_primary_color="#F4B183"
+            app:dots_secondary_color="@color/colorPrimary"
+
+            app:icon_size="35dp"
+            app:anim_scale_factor="2.5"
+            app:like_drawable="@drawable/i_text"
+            app:unlike_drawable="@drawable/i_gray" />
+
+        <com.like.LikeButton
+            android:id="@+id/forthLikeButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginRight="5dp"
+
+            app:circle_end_color="#BDD7EE"
+            app:circle_start_color="@color/colorPrimary"
+            app:dots_primary_color="#BDD7EE"
+            app:dots_secondary_color="@color/colorPrimary"
+            app:icon_size="35dp"
+            app:anim_scale_factor="2.5"
+            app:like_drawable="@drawable/p_text"
+            app:unlike_drawable="@drawable/p_gray" />
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/Input_nextButton"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:fontFamily="@font/nexonbold"
+            android:shape="rectangle"
+            android:text="완료"
+            android:background="@drawable/shadow_button"
+
+            android:textColor="@color/black"
+            android:layout_marginTop="20dp"
+            android:textSize="18dp" />
+    </RelativeLayout>
+
+</LinearLayout>

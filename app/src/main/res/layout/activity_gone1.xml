@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+  <fragment
+      android:id="@+id/gone1_google_map"
+      android:name="com.google.android.gms.maps.SupportMapFragment"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent" />
+
+  <SearchView
+      android:id="@+id/sv_location"
+      android:layout_width="300dp"
+      android:layout_height="wrap_content"
+      android:layout_alignParentStart="true"
+      android:layout_marginStart="5dp"
+      android:layout_marginLeft="35dp"
+      android:layout_marginTop="5dp"
+      android:elevation="5dp"
+      android:iconifiedByDefault="false"
+      android:queryHint="Search ..." />
+
+  <Button
+      android:id="@+id/gone1_storeButton"
+      android:layout_width="60dp"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="25dp"
+      android:layout_marginTop="45dp"
+      android:layout_toRightOf="@+id/sv_location"
+      android:fontFamily="@font/nexonbold"
+      android:text="저장" />
+
+  <Button
+      android:id="@+id/gone1_nextButton"
+      android:layout_width="60dp"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="330dp"
+      android:layout_marginTop="5dp"
+      android:fontFamily="@font/nexonbold"
+      android:text="다음" />
+
+
+</RelativeLayout>

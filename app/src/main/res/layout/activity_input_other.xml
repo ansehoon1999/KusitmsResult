@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal|center_vertical">
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+
+        <Button
+            android:id="@+id/ImageSwitcher_previousButton"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="왼쪽" />
+
+
+        <ImageSwitcher
+
+            android:id="@+id/ImageSwitcher_ProfileImage"
+            android:src="@drawable/tmp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="50dp"/>
+
+
+
+        <Button
+            android:id="@+id/ImageSwitcher_nextButton"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="오른쪽"/>
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/ImageSwitcher_goButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="이미지 고르러 가기"
+        />
+
+
+    <EditText
+        android:id="@+id/Input_placeEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="장소" />
+
+    <EditText
+        android:id="@+id/Input_dateEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="날짜" />
+
+    <EditText
+        android:id="@+id/Input_timeEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="끝난 시간" />
+
+    <EditText
+        android:id="@+id/Input_commentEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="코멘트" />
+
+    <me.zhanghai.android.materialratingbar.MaterialRatingBar
+        android:id="@+id/Input_rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/Widget.MaterialRatingBar.RatingBar" />
+
+
+
+    <Button
+        android:id="@+id/Input_nextButton"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="150dp"
+        android:fontFamily="@font/nexonbold"
+        android:text="완료"
+        android:textSize="18dp"
+        android:textColor="@color/black"
+        android:shape="rectangle"/>
+
+
+</LinearLayout>

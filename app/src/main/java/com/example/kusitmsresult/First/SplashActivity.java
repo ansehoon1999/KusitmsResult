@@ -3,6 +3,7 @@ package com.example.kusitmsresult.First;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.Window;
@@ -18,10 +19,13 @@ public class SplashActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_splash);
 
+
+
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
+
                 Intent intent = new Intent(getBaseContext(), TutorialActivity.class);
                 startActivity(intent);
                 finish();

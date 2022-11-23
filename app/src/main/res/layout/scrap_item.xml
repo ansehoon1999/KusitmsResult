@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/shimmerFrameLayout">
+
+    <LinearLayout
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="6dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/shadow"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/scrap_profile"
+            android:layout_width="150dp"
+            android:layout_height="130dp"
+            android:layout_margin="20dp"
+            android:background="@color/colorShimmer"/>
+
+        <LinearLayout
+            android:layout_width="170dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/scrap_travelSite"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="20dp"
+                android:background="@color/colorShimmer"
+                android:fontFamily="@font/nexonbold" />
+
+            <TextView
+                android:id="@+id/scrap_travelDate"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:drawablePadding="7dip"
+                android:text=""
+                android:textColor="#5517191B"
+                android:textSize="16dp"
+                android:background="@color/colorShimmer"
+                android:fontFamily="@font/nexonmedium"/>
+
+            <LinearLayout
+
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/badge1"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                     />
+
+                <ImageView
+                    android:id="@+id/badge2"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+             />
+
+                <ImageView
+                    android:id="@+id/badge3"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                     />
+
+                <ImageView
+                    android:id="@+id/badge4"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+               />
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/scrap_nextButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="bottom"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="-35dp"
+            android:text="&#62;"
+            android:textSize="15dp"
+            android:fontFamily="@font/cafe"/>
+
+
+    </LinearLayout>
+
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
+</RelativeLayout>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Travel_Fragment.EvaluationActivity2"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+
+        android:layout_height="45dp">
+
+        <View
+            android:layout_width="85dp"
+            android:layout_height="30dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="165dp"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/gotravel"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginTop="20dp"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/recycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:lineColor="@color/black"
+        android:layout_weight="3"
+
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        >
+
+        <Button
+            android:id="@+id/evaluation2_registerButton"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:text="등록"
+            android:layout_marginRight="10dp"
+            android:fontFamily="@font/nexonmedium"/>
+
+        <Button
+            android:id="@+id/evaluation2_tmpStoreButton"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+
+            android:text="임시"
+            android:fontFamily="@font/nexonmedium"/>
+
+        <Button
+            android:id="@+id/evaluation2_addButton"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+
+            android:text="추가"
+            android:fontFamily="@font/nexonmedium"/>
+
+        <Button
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+
+            android:text="삭제"
+            android:fontFamily="@font/nexonmedium"/>
+
+
+    </LinearLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/lastRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:scrollbars="horizontal">
+
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+</LinearLayout>
