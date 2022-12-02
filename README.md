@@ -21,6 +21,7 @@
 
 ## Demo
 https://drive.google.com/file/d/18MjSPw-EuUDDKFUfM9ZKmt_7_YPtneWQ/view?usp=share_link
+https://youtu.be/2jVOluyzTlc
 
 ## Technology Stack
 * Android Studio 4.1.1
