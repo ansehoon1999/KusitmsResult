@@ -239,6 +239,11 @@ public class StartTravelActivity extends FragmentActivity implements
 
         //============================================================
 
+        /*
+        간단한 추천 시스템: content-based collaborative filtering
+        프로토타입 형태로 예시로 보여주는 형식
+         */
+
         Intent intent = getIntent();
         ArrayList<String>  userUidList = (ArrayList<String>) intent.getSerializableExtra("userUidList");
         ArrayList<String>  placeList = (ArrayList<String>) intent.getSerializableExtra("placeList");
@@ -306,14 +311,9 @@ public class StartTravelActivity extends FragmentActivity implements
         Array_Copy(filtered_array, filtered_array_copy);
         int idx = find_index_by_place("광주");
 
-        Log.d("table", String.valueOf(idx));
-
-
-        //icf.print_filtered_array();
-
-
-
-
+        /*
+        구글맵 API 불러오는 코드
+         */
 
         mGoogleApiClient = new GoogleApiClient.Builder(this)
                 .addConnectionCallbacks(this)
@@ -321,13 +321,20 @@ public class StartTravelActivity extends FragmentActivity implements
                 .addApi(LocationServices.API)
                 .build();
 
-        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
+        /*
+        구글맵을 불러오는 코드
+        구글맵 카메라를 initalize하는 코드
+         */
+
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
 
-        //--------------------------------------------------code for restoring bundle------
+        /*
+        code for restoring bundle
+         */
+
         requestFlag = false;
         latitude = new ArrayList<Double>();
         longitude = new ArrayList<Double>();
@@ -351,33 +358,20 @@ public class StartTravelActivity extends FragmentActivity implements
         createLocationRequest();
         locationRequestSetting();
         gettingLastLocation();
-        Log.d("create called:", "inside create");
-
-
-
-        // ==========================================================================추가
-
-
-
-
-
-
-        // ==========================================================================
 
         startTravel_arrayList = new ArrayList<String>();
         startTravel_arrayList.add("덕수궁");
         startTravel_arrayList.add("르풀");
-
-        //============================================================
-
         startTravel_timearrayList = new ArrayList<String>();
-
-
         startTravel_datearrayList = new ArrayList<String>();
         startTravel_datearrayList.add("5월25일");
         startTravel_datearrayList.add("5월25일");
 
-        //============================================================
+
+        /*
+        stop 버튼을 눌렀을 경우
+         */
+
         stop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -475,13 +469,6 @@ public class StartTravelActivity extends FragmentActivity implements
     }
 
 
-    public void filtering() {
-
-
-
-    }
-
-
 
     public void gettingLastLocation() {
         mLocationCallback = new LocationCallback() {
@@ -489,13 +476,13 @@ public class StartTravelActivity extends FragmentActivity implements
             public void onLocationResult(LocationResult locationResult) {
                 super.onLocationResult(locationResult);
                 mCurrentLocation = locationResult.getLastLocation();
-                if (lastLocation != null) {
+                if (lastLocation != null) { // 처음이 아닌 경우
                     float travelDistance = lastLocation.distanceTo(mCurrentLocation); //단위: m
                     distance = distance + travelDistance;
                     float viewDistance = distance / 1000; //단위: km
                     distanceView.setText(String.format("%.2f", viewDistance)+"km"); //여기에 km를 덧붙이고
                     addPolyLine_onMap(mCurrentLocation); //처음이 아니라면 update만. pin을 꽂진 않음
-                } else {
+                } else { // 처음인 경우
                     pinMap(mCurrentLocation, 100); //처음 여행 start 했을 때 핀 꽂음(MarkerList에 첫 장소도 등록)
                     addPolyLine_onMap(mCurrentLocation); //처음 여행 start 했을 때 핀 꽂음(MarkerList에 첫 장소도 등록)
                 }
@@ -522,7 +509,9 @@ public class StartTravelActivity extends FragmentActivity implements
         return image;
     }
 
-
+    /*
+    stop 버튼을 눌럿을 경우 event
+     */
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
@@ -734,14 +723,22 @@ public class StartTravelActivity extends FragmentActivity implements
     }
 
 
+    /*
+    앱에서 위치를 요청하거나 권한 업데이트를 수신하는 경우
+    setInterval: 앱에서 선호하는 위치 업데이트 수신 간격을 밀리초 단위로 설정
+    Priority: 가장 정확한 위치를 요청
+     */
 
     public void createLocationRequest() {
         mLocationrequest = new LocationRequest();
         mLocationrequest.setInterval(requestInterval);
         mLocationrequest.setFastestInterval(fastInterval);
         mLocationrequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
-        //mLocationrequest.setSmallestDisplacement(minmumDistanceforRequest);
     }
+
+    /*
+    사용자 기기의 현재 위치 설정을 받을 수 있음
+     */
 
     public void locationRequestSetting() {
         builder = new LocationSettingsRequest.Builder()
@@ -791,11 +788,7 @@ public class StartTravelActivity extends FragmentActivity implements
         timeView.setText("");
         distanceView.setText("0.00km");
         speedstate = true;
-
         onCount_markerList_index = 0;
-
-        //MarkerList.clear(); //다시 시작할 때 이전 마커 다 지우기
-
 
 
         polylineOption = new PolylineOptions().width(14).color(0xFFBB86FC).startCap(new RoundCap()).endCap(new RoundCap());
@@ -995,19 +988,10 @@ public class StartTravelActivity extends FragmentActivity implements
 
 
 
-/**
- * location update for continues trigger
- * **/
-
-
-    /**
-     * Manipulates the map once available.
-     * This callback is triggered when the map is ready to be used.
-     * This is where we can add markers or lines, add listeners or move the camera. In this case,
-     * we just add a marker near Sydney, Australia.
-     * If Google Play services is not installed on the device, the user will be prompted to install
-     * it inside the SupportMapFragment. This method will only be triggered once the user has
-     * installed Google Play services and returned to the app.
+    /*
+    구글 맵이 처음에 준비가 되었을 때 (처음 구글맵 실행) 실행되는 코드
+    구글 맵을 initalize 함
+    구글 맵의 카메라를 움직이는 class (CameraUpdateFacotry)
      */
     @Override
     public void onMapReady(final GoogleMap googleMap) { //처음 지도가 떴을 때
@@ -1019,9 +1003,6 @@ public class StartTravelActivity extends FragmentActivity implements
         center=CameraUpdateFactory.newLatLng(temp);
         mMap.moveCamera(center);
         mMap.animateCamera(zoom);
-
-
-
 
     }
 
@@ -1048,19 +1029,14 @@ public class StartTravelActivity extends FragmentActivity implements
 
 
     public void addPolyLine_onMap(Location location) {
-        Log.d("addPolyLine_onMap", "here");
 
         lastLocation = mCurrentLocation;
-
         latLng = new LatLng(location.getLatitude(), location.getLongitude());
-
         polylineOption.add(latLng);
         polyline = mMap.addPolyline(polylineOption);
         center=CameraUpdateFactory.newLatLng(latLng);
 
-
         mMap.moveCamera(center); // 현재 위치로 화면 중앙을 맞춤
-        //mMap.animateCamera(zoom);
 
     }
 
@@ -1083,11 +1059,9 @@ public class StartTravelActivity extends FragmentActivity implements
             URLaddress = MarkerList.get(onCount_markerList_index).getMarkerTitle().replaceAll(" ", "+"); //URL을 위한 주소 형태(서울시+종로구+ ...)
         }
 
-        mCurrentLocation = location; //지우면 안돼.
+        mCurrentLocation = location;
         LatLng position;
         String markerTitle,markerSnippet;
-
-        Log.d("Markeroptions","markeroptions"+Integer.toString(i));
 
         MarkerOptions markerOptions = new MarkerOptions();
 
@@ -1097,7 +1071,6 @@ public class StartTravelActivity extends FragmentActivity implements
         BitmapDrawable bitmapDrawable;
 
         if (i==100) {
-            //Toast.makeText(this, "StartMap", Toast.LENGTH_SHORT).show();
             position = new LatLng(location.getLatitude(), location.getLongitude());
             markerTitle = "";
             markerSnippet = "";
@@ -1105,8 +1078,6 @@ public class StartTravelActivity extends FragmentActivity implements
             bitmapDrawable = (BitmapDrawable)getResources().getDrawable(R.drawable.traveler_icon);
             bitmap= bitmapDrawable.getBitmap();
             smallMarker = Bitmap.createScaledBitmap(bitmap, 125, 125, false);
-
-
         } else {
             Toast.makeText(this,"장소를 선택하여 주십시오", Toast.LENGTH_LONG).show();
             Log.d("MarkerLat",Double.toString(MarkerList.get(i).getLat()));
@@ -1141,10 +1112,6 @@ public class StartTravelActivity extends FragmentActivity implements
         markerOptionsArrayList.add(markerOptions);
         mMap.setOnMarkerClickListener(this);
 
-
-
-
-        Log.d("markerlistlength",Integer.toString(MarkerList.size()));
     }
 
     @Override
@@ -1363,9 +1330,9 @@ public class StartTravelActivity extends FragmentActivity implements
 
     }
 
-    /*** thread for running timer*/
-
-    /*** thread for running timer*/
+    /*
+     thread for running timer
+     */
 
     public class UserService implements Runnable{
         @Override
@@ -1374,13 +1341,19 @@ public class StartTravelActivity extends FragmentActivity implements
             Thread.currentThread().setName("UserService");
             Thread.currentThread().setPriority(Thread.MAX_PRIORITY);
             threadstate = true;
+
+            // requestFlag == true인 경우 실행
             while(StartTravelActivity.requestFlag) {
-                long time2 = System.currentTimeMillis();
-                StartTravelActivity.totalTime = StartTravelActivity.totalTime + (time2 - time1);
+                long time2 = System.currentTimeMillis(); // 현재 시간
+                StartTravelActivity.totalTime = StartTravelActivity.totalTime + (time2 - time1); // 전체 걸린 시간
                 time1 = time2;
+                // 시간을 시/분/초 로 나누는 부분
                 long second = (StartTravelActivity.totalTime / 1000) % 60;
                 long minute = (StartTravelActivity.totalTime / (60 * 1000)) % 60;
                 long hour = (StartTravelActivity.totalTime / (60 * 60 * 1000)) % 24;
+                // ===========================
+
+                // message 객체를 생성한 후에 bundle에 시/분/초를 넣는다
                 Message message = Message.obtain();
                 Bundle bundle = new Bundle();
                 bundle.putLong("hours",hour);
@@ -1403,22 +1376,13 @@ public class StartTravelActivity extends FragmentActivity implements
     @SuppressLint("HandlerLeak")
     public Handler MainHandler = new Handler(){
         public void handleMessage(Message inputMessage){ //1초마다 돌아가는 쓰레드
+
+            // 
             Bundle bundle = inputMessage.getData();
             String hour = Long.toString(bundle.getLong("hours"));
             String minute = Long.toString(bundle.getLong("minute"));
             String second = Long.toString(bundle.getLong("second"));
             timeView.setText(hour+":"+minute+":"+second);
-
-//
-//            if (mCurrentLocation!=null) {
-//                Log.d("if문", "if문 before checkdistance");
-//                check_distance_every_second(mCurrentLocation,lastLocation);
-//                if(check_distance_every_second(mCurrentLocation,lastLocation) < 0.0001) {
-//                    addPolyLine_onMap(mCurrentLocation);
-//                    //zoomMap(mCurrentLocation);
-//
-//                } //polyline 계속 그리기
-//            }
 
             gettingLastLocation();
 
