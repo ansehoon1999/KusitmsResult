@@ -799,7 +799,9 @@ public class StartTravelActivity extends FragmentActivity implements
         start.setVisibility(View.INVISIBLE);
         startButtonClickedState = true;
         if (checkingPermission()) {
-            requestFlag = true;
+
+            // 타이머가 시작되는 부분분
+           requestFlag = true;
             time1 = System.currentTimeMillis();
             timeUpdate = new UserService();
             timer = new Thread(timeUpdate);
@@ -812,19 +814,6 @@ public class StartTravelActivity extends FragmentActivity implements
         } else if (!checkingPermission()) {
             requestPermission();
         }
-
-
-
-        Double Marker1_lat, Marker1_lng, Marker2_lat, Marker2_lng, Marker3_lat, Marker3_lng;
-
-        //지금추가
-        Marker1_lat=37.5659240; Marker1_lng=126.975010;
-        Marker2_lat=37.5662027; Marker2_lng=126.972146;
-        MarkerList.add(new MarkerModel(Marker1_lat, Marker1_lng, "장소를 선택하여 주십시오","서울특별시 중구 세종대로 99", new ArrayList<String>(), ""));
-        MarkerList.add(new MarkerModel(Marker2_lat,Marker2_lng,"장소를 선택하여 주십시오","서울특별시 중구 정동길 33", new ArrayList<String>(), ""));
-        //        Distance sampledist = new Distance(Marker1_lat, Marker1_lng, Marker2_lat, Marker2_lng,"km");
-//        Log.d("sampledist: ", Double.toString(sampledist.distance()));
-
     }
 
 
@@ -1043,13 +1032,13 @@ public class StartTravelActivity extends FragmentActivity implements
 
     public void pinMap(Location location, int i) { //location 지우면 안돼
 
+        // poly Line을 표시한다
         addPolyLine_onMap(location);
 
-        //아래 문단은 실제 주소를 가져올 것이 아니기 때문에 필요가 없음
-//        String markerTitle = getCurrentAddress(latLng);
-//        URLaddress = markerTitle.replaceAll(" ","+"); //URL을 위한 주소 형태(서울시+종로구+ ...)
-//        String markerSnippet = "위도:" + String.valueOf(location.getLatitude())
-//                + " 경도:" + String.valueOf(location.getLongitude());
+        String markerTitle = getCurrentAddress(latLng);
+        URLaddress = markerTitle.replaceAll(" ","+"); //URL을 위한 주소 형태(서울시+종로구+ ...)
+        String markerSnippet = "위도:" + String.valueOf(location.getLatitude())
+                + " 경도:" + String.valueOf(location.getLongitude());
 
         //현재 위치에 마커 생성하고 이동
 //        getSampleMarkerItems(currentPosition.latitude, currentPosition.longitude, markerTitle, markerSnippet);
@@ -1070,6 +1059,7 @@ public class StartTravelActivity extends FragmentActivity implements
         Bitmap bitmap;
         BitmapDrawable bitmapDrawable;
 
+        // 처음 여행에 start 했을 떄
         if (i==100) {
             position = new LatLng(location.getLatitude(), location.getLongitude());
             markerTitle = "";
@@ -1270,11 +1260,6 @@ public class StartTravelActivity extends FragmentActivity implements
 
     //MarkerModel 형식으로 직접 마커 찍어주기
     private void getSampleMarkerItems(double lat, double lng, String title, String snippet) {
-
-        //MarkerList.add(new MarkerModel(lat, lng, title, snippet));
-//        MarkerList.add(new MarkerModel(37.5444445,126.9447639, "서울+용산구+청파로43길+12","marker1"));
-//        MarkerList.add(new MarkerModel(37.5444445,126.9447639, "서울특별시+동작구+동작대로+21","marker2"));
-
         for (MarkerModel markerModel : MarkerList) {
             Toast.makeText(this,"Marker Title:"+markerModel.markerTitle, Toast.LENGTH_SHORT).show();
             Log.d("MarkerModel",markerModel.markerTitle);
@@ -1288,11 +1273,7 @@ public class StartTravelActivity extends FragmentActivity implements
             markerOptions.snippet(markerSnippet);
 
             mMap.addMarker(markerOptions);
-            // markerModel.show_latlng();   :됨
         }
-
-        Log.d("markerlistlength",Integer.toString(MarkerList.size()));
-
     }
 
 
@@ -1402,14 +1383,11 @@ public class StartTravelActivity extends FragmentActivity implements
             //지금추가
             if (onCount_markerList_index < 2){
                 pinning.check_radius(MarkerList.get(onCount_markerList_index)); //2km보다 큰 지 작은 지 체크해서 최근&현재 바꾸기 or 카운트 증가
-                Log.d("pinning", Integer.toString(pinning.count_dist)); //count_dist: 기준 거리보다 작은 횟수를 카운트
-                //Toast.makeText(getApplicationContext(), Integer.toString(pinning.count_dist), Toast.LENGTH_SHORT).show();
-                if ((pinning.count_dist == 30 ) & (pinning.count_dist > 0)) { //count_dist가 5개 될 때마다 체크
-                    Log.d("onCountmarkerList_index", Integer.toString(onCount_markerList_index));
+                if ((pinning.count_dist == 5 ) & (pinning.count_dist > 0)) { //count_dist가 5개 될 때마다 체크
                     onCount(pinning);
                     onCount_markerList_index += 1; //이건 쓸데없는 거. 인덱스 넘어가서 앱 튕기지 말라고 넣음
 
-                     //현재 시각 받아오기
+                    //현재 시각 받아오기
                     long now = System.currentTimeMillis();
                     Date date = new Date(now);
                     SimpleDateFormat sdf = new SimpleDateFormat( "HH:mm");
@@ -1417,15 +1395,9 @@ public class StartTravelActivity extends FragmentActivity implements
                     String getTime = sdf.format(date);
                     if (onCount_markerList_index > 0) {
                         startTravel_timearrayList.add(getTime);
-                        for (int index = 0; index < startTravel_timearrayList.size(); index++) {
-                            //Toast.makeText(StartTravelActivity.this, startTravel_timearrayList.get(index), Toast.LENGTH_SHORT).show();
-                            System.out.println("time: " + startTravel_timearrayList.get(index));
-                        }
                     }
 
                     pinning.count_dist = 0;
-                } else {
-                    //Log.d("pinning",Integer.toString(pinning.count_dist));
                 }
             }
         }
@@ -1436,7 +1408,6 @@ public class StartTravelActivity extends FragmentActivity implements
     public void onCount(DistanceRadius pin) {
         new CrawlingThread().execute();
 
-        Log.d("markerlistlength",Integer.toString(MarkerList.size()));
         pinMap(mCurrentLocation, onCount_markerList_index); //핀 꽂기
         pin.printLatest(); //현재 latlng 출력
 

@@ -29,11 +29,9 @@ public class DistanceRadius {
         double latest_current_distance=dist.distance();
 
         if (latest_current_distance > 100) {
-            android.util.Log.d("far current_distance: ", Double.toString(latest_current_distance));
             return false;
         }
         else {
-            android.util.Log.d("closecurrent_distance: ", Double.toString(latest_current_distance));
             return true;
         }
     }
@@ -43,7 +41,6 @@ public class DistanceRadius {
         // 반경 안에 있으면  true/ else false
         // x1, y1이 기준, x2, y2가 new
         Distance dist=new Distance(x1,y1,x2,y2,"km");
-        android.util.Log.d("distancemodel:", Double.toString(dist.distance()));
         if (dist.distance()<=d) {
             return true;
         }
