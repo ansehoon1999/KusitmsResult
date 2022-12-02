@@ -1360,7 +1360,9 @@ public class StartTravelActivity extends FragmentActivity implements
                 bundle.putLong("minute",minute);
                 bundle.putLong("second",second);
                 message.setData(bundle);
-                MainHandler.sendMessage(message);
+
+                // handler안에 message를 넣기기
+               MainHandler.sendMessage(message);
                 try {
                     Thread.sleep(1000);
                 }catch (InterruptedException irexcption) {
@@ -1375,22 +1377,24 @@ public class StartTravelActivity extends FragmentActivity implements
 
     @SuppressLint("HandlerLeak")
     public Handler MainHandler = new Handler(){
-        public void handleMessage(Message inputMessage){ //1초마다 돌아가는 쓰레드
-
-            // 
+        public void handleMessage(Message inputMessage){
+            // 1초마다 돌아가는 쓰레드
+            // message 객체로 부터 시/분/초 정보를 입력받음
+            // timeView에 보여줌
             Bundle bundle = inputMessage.getData();
             String hour = Long.toString(bundle.getLong("hours"));
             String minute = Long.toString(bundle.getLong("minute"));
             String second = Long.toString(bundle.getLong("second"));
             timeView.setText(hour+":"+minute+":"+second);
 
+            // 가장 최신의 위치를 불러온다
             gettingLastLocation();
 
 
             Distance distance_every_second;
             if (mCurrentLocation != null & lastLocation != null) {
+                // 매 초마다 거리를 불러옴
                 distance_every_second = new Distance(mCurrentLocation.getLatitude(), mCurrentLocation.getLongitude(), lastLocation.getLatitude(), lastLocation.getLongitude(), "km");
-                Log.d("current_distance", Double.toString(distance_every_second.distance()));
             }
 
 
@@ -1430,19 +1434,10 @@ public class StartTravelActivity extends FragmentActivity implements
 
 
     public void onCount(DistanceRadius pin) {
-        Log.d("oncount","oncount");
         new CrawlingThread().execute();
 
         Log.d("markerlistlength",Integer.toString(MarkerList.size()));
-        //Log.d("Pinning Count: ", Integer.toString(pinning.count_dist));
-
-//        Integer markerList_index = (pin.count_dist)/5 +1;
-        //Integer markerList_index = (pin.count_dist)/5;
-
         pinMap(mCurrentLocation, onCount_markerList_index); //핀 꽂기
-        //Log.d("markerList_index: ",Integer.toString(markerList_index));
-
-//        pin.setCurrent(MarkerList.get(markerList_index).lat,MarkerList.get(markerList_index).lng);
         pin.printLatest(); //현재 latlng 출력
 
     }
@@ -1457,14 +1452,13 @@ public class StartTravelActivity extends FragmentActivity implements
             try {
                 Log.d("CrawlingThread","CrawlingThread"); //ok
                 String URL = "https://search.naver.com/search.naver?sm=tab_hty.top&where=nexearch&query="+MarkerList.get(onCount_markerList_index).getMarkerSnippet();
-                //String URL = "https://search.naver.com/search.naver?sm=tab_hty.top&where=nexearch&query=서울+용산구+청파로43길+12";
+                //ex) "https://search.naver.com/search.naver?sm=tab_hty.top&where=nexearch&query=서울+용산구+청파로43길+12";
                 Log.d("URL in CrawlingThread",URL);
                 Document doc = Jsoup.connect(URL).get();
                 Elements contents;
                 contents = doc.select("div._1toz7 span._309N9"); //span._309N9: 상점 이름들의 태그
 
                 for (Element e : contents) { //URL을 쟤로 했을 때 여길 못 들어가
-                    Log.d("Debug","for문");
                     get_storeName = e.text();
                     System.out.println("get_storeName: "+get_storeName + "\n");
                     MarkerList.get(onCount_markerList_index-1).add_storename_list(get_storeName);
