@@ -1,43 +1,50 @@
-# Travelog✈️
+# 여행에 날개를 달다 - Travelog✈️
 
-### KUSITMS 23기(2021.3~2021.6) 학술제 우수상작 🥉
+<img src="https://img.shields.io/badge/platform-android-brightgreen">
 
-#### 여행에 날개를 달다 
+> KUSITMS 23기(2021.3~2021.6) 학술제 우수상작 🥉
 
-<img src="https://user-images.githubusercontent.com/68985625/130225398-33339094-791b-45ea-89ad-460e73594d8d.jpg" width=80%>
+> 여행에 날개를 달다 - Travelog✈️
 
-## About Travelog
-* **Simplify** keeping record of and reviewing trips
-1. Real-time automatic recognition of travel route through GPS.
-2. Automatic recognition of each location the user is visiting.
-3. User completes trip review by selecting among TRIP keys and adding comments to each photo.
-</br>
+## Explanation
 
-* **Customized** travelling information based on user's personal needs
-1. Easily readable details of the whole trip.
-2. Using keywords to provide information that meets personal preferences.</br>
-  ***T**ransportation  **R**evisit  **I**dea  **P**rice*
-</br>
+여행 후기 공유를 위해 직접 방문 장소를 기재하는 불편함을 해소할 수 있는 서비스입니다. 여행 경로를 자동으로 인식하여 후기를 간편하게 작성하는 기능을 제공합니다
+
+## Function
+
+- 사용자의 움직임에 따라 자동적으로 지도 위에 여행 경로를 그려 자신의 경로를 확인하는 기능 
+- 사용자가 여행지에 도달했을 때 자동적으로 여행지를 인식하는 기능
+- 사용자가 방문한 여행지에 따라 비슷한 여행지를 추천하는 기능 (Item-based Collaborative Filtering)
+- 여행 후기 작성 및 타인의 여행 후기를 검색하고 볼 수 있는 커뮤니티 기능
+- 타인의 여행 후기를 위시리스트에 추가할 수 있는 기능
+
+## 버전 및 사용 스택
+- Android (Java)
+- Android targetVersion: 30
+- Realtime Firebase: 19.3.0
+- play-services-map: 17.0.0
+- Firestorage: 19.1.1
+- Glide: 4.11.0
+
+## 이외 오픈 소스
+- 'com.shobhitpuri.custombuttons:google-signin:1.1.0'
+- 'com.facebook.shimmer:shimmer:0.4.0'
+- 'com.github.applikeysolutions:cosmocalendar:1.0.4'
+- 'com.jakewharton:butterknife:10.0.0'
+- 'com.facebook.android:facebook-android-sdk:[4,5)'
+- 'com.squareup.picasso:picasso:2.71828'
+- 'devlight.io:navigationtabbar:1.2.5'
+- "com.yuyakaido.android:card-stack-view:2.3.4"
+- 'com.mikepenz:iconics-core:2.9.3@aar'
+- 'com.mikepenz:ionicons-typeface:2.0.1.3@aar'
+- 'com.mikepenz:fontawesome-typeface:4.7.0.1@aar'
+- 'org.jsoup:jsoup:1.13.1'
+- 'com.github.sujithkanna:smileyrating:2.0.0'
+- 'com.github.jd-alexander:LikeButton:0.2.3'
 
 ## Demo
 https://drive.google.com/file/d/18MjSPw-EuUDDKFUfM9ZKmt_7_YPtneWQ/view?usp=share_link
 https://youtu.be/2jVOluyzTlc
-
-## Technology Stack
-* Android Studio 4.1.1
-* buildToolsVersion 30.0.1
-* compileSDKversion 30
-
-* Firebase Realtime Database/Storage version 19.3.0
-
-* Google Login, Map API
-* Facebook Login API
-* Recommendation System: Contents-based Collaborative filtering
-</br>
-
-## Use-Case Map
-<img src="https://user-images.githubusercontent.com/66097819/148505423-65d460a9-df91-4166-bcf5-98985a74848a.png">
-
 
 ## Demo
 |튜토리얼|장소 스크랩|여행 기록|
