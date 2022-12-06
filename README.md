@@ -2,6 +2,8 @@
 
 <img src="https://img.shields.io/badge/platform-android-brightgreen">
 
+<img src="https://user-images.githubusercontent.com/63048392/205852658-d04e0066-f47b-4e1a-8420-9bf5a42b08c9.png" width="100" height="100">
+
 > KUSITMS 23기(2021.3~2021.6) 학술제 우수상작 🥉
 
 > 여행에 날개를 달다 - Travelog✈️
